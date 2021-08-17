@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 const baseURL = 'http://localhost:3003/'
 
-function Form() {
+function Form({currentId, setCurrentId}) {
 
     const history = useHistory()
 

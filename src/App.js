@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Form from "./components/Form";
+import Show from "./components/Show";
 
 function App() {
 
-  const [bookmarks, setBookmarks] = useState([])
+  const [currentId, setCurrentId] = useState(null)
 
   return (
     <div>
-      <Form />
+      <h1>Welcome to Bookmarks</h1>
+      <Form currentId={currentId} setCurrentId={setCurrentId}/>
+      <Show setCurrentId={setCurrentId}/>
     </div>
   );
 }
