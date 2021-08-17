@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Patchdelete from './Patchdelete'
 
 const baseURL = 'http://localhost:3003/'
 
-const Show = ({currentId, setCurrentId}) => {
+const Show = () => {
 
   const [bookmarks, setBookmarks] = useState([])
 
   
-
   useEffect(() => {
       async function fetchData() {
           const res = await axios.get(baseURL + 'bookmarks')
@@ -40,7 +38,6 @@ const Show = ({currentId, setCurrentId}) => {
                     <h3>{bookmark.title}</h3>
                     <h3><a href={'http://' + bookmark.url} target='_blank'>{bookmark.url} </a></h3>
                     <button onClick={() => deleteBookmark(bookmark._id)}  />
-                        
                 </div>
             ))}
         </div>

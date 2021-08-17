@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
 
 const baseURL = 'http://localhost:3003/'
 
-function Form({currentId, setCurrentId}) {
+function Form() {
 
-    const history = useHistory()
 
     const [title, setTitle] = useState('')
     const [url, setUrl] = useState('')
@@ -18,7 +16,6 @@ function Form({currentId, setCurrentId}) {
                 title: title,
                 url: url
             })
-            // history.push('/')
         } catch (error) {
             console.log(error)
         }
